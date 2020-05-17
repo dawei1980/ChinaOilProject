@@ -1,11 +1,15 @@
 package com.china.oil.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+
+import androidx.fragment.app.Fragment;
+
 import com.china.oil.R;
 import com.china.oil.uils.ScreenUtil;
 import com.github.mikephil.charting.charts.LineChart;
@@ -23,7 +27,7 @@ import java.util.Random;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeFragment extends ChartFragment {
+public class HomeFragment extends Fragment {
 
     private View view;
     @BindView(R.id.mLineChar)
@@ -36,16 +40,13 @@ public class HomeFragment extends ChartFragment {
         ButterKnife.bind(this, view);
 
         initView();
+        //设置数据
+        setData(12, 1000);
         return view;
     }
 
-    @Override
-    protected int getLayoutId() {
-        return 0;
-    }
+    private void initView(){
 
-    @Override
-    protected void initLayout() {
         // 线形图初始化
         ViewGroup.LayoutParams lp = mLineChart.getLayoutParams();
         lp.width = ScreenUtil.getWidth(getActivity());
@@ -105,15 +106,6 @@ public class HomeFragment extends ChartFragment {
         leftAxis.setGranularityEnabled(false);
 
         mLineChart.getAxisRight().setEnabled(false);
-    }
-
-    @Override
-    protected void requestData() {
-        //设置数据
-        setData(12, 1000);
-    }
-
-    private void initView(){
     }
 
     //设置数据
