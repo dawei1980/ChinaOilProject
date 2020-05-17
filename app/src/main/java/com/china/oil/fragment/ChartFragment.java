@@ -26,10 +26,7 @@ public abstract class ChartFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(getLayoutId(), null);
-        Objects.requireNonNull(getActivity()).getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-
-        ButterKnife.bind(this, view);
-
+        mUnbinder = ButterKnife.bind(getActivity());
         setStateBarColor();
         initLayout();
         requestData();
