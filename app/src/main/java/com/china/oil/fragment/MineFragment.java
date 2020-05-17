@@ -6,11 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 
+import androidx.fragment.app.Fragment;
+
 import com.china.oil.R;
 
 import butterknife.ButterKnife;
 
-public class MineFragment extends BaseFragment {
+public class MineFragment extends Fragment {
     private View view;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -21,21 +23,6 @@ public class MineFragment extends BaseFragment {
 
         initView();
         return view;
-    }
-
-    @Override
-    protected int getLayoutId() {
-        return 0;
-    }
-
-    @Override
-    protected void initLayout() {
-
-    }
-
-    @Override
-    protected void requestData() {
-
     }
 
     private void initView(){

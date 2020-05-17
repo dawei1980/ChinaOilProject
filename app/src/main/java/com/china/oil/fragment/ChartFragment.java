@@ -19,7 +19,7 @@ import java.util.Objects;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public abstract class BaseFragment extends Fragment {
+public abstract class ChartFragment extends Fragment {
     private View view;
     private static final String TAG = "BaseActivity";
     protected Unbinder mUnbinder;
