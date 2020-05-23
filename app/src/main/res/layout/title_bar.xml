@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_layout_height"
+    android:background="@color/relative_head_green">
+    <Button
+        android:id="@+id/back_btn"
+        style="@style/Back_Style_left_top"/>
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_18"
+        android:layout_centerInParent="true"
+        android:text="ddd"/>
+</RelativeLayout>

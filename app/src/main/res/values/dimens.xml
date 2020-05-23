@@ -9,6 +9,17 @@
     <dimen name="me_left_list_item_h">50dp</dimen>
 
     <dimen name="usercenter_left_title_textsize">17sp</dimen>
+    <!--Login-->
+    <dimen name="login_portrait_width_height">100dp</dimen>
+    <dimen name="login_portrait_marginTop">50dp</dimen>
+    <dimen name="login_et_marginLeftRight">24dp</dimen>
+    <dimen name="login_et_marginTop">35dp</dimen>
+    <dimen name="login_et_height">40dp</dimen>
+    <dimen name="login_et_marginTop_distance">30dp</dimen>
+    <dimen name="login_line_height">1dp</dimen>
+    <dimen name="login_ok_btn_width">275dp</dimen>
+    <dimen name="login_ok_btn_height">45dp</dimen>
+    <dimen name="login_ok_btn_marginTop">60dp</dimen>
 
     <!--通用dimens-->
     <dimen name="font_size_10">10dp</dimen>

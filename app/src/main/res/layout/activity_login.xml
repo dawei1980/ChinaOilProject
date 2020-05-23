@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/title_bar"/>
+
+    <ImageView
+        android:id="@+id/login_user_portrait"
+        android:layout_width="@dimen/login_portrait_width_height"
+        android:layout_height="@dimen/login_portrait_width_height"
+        android:src="@mipmap/img_usercentre_header_f"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/login_portrait_marginTop"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/login_et_marginLeftRight"
+        android:layout_marginRight="@dimen/login_et_marginLeftRight"
+        android:layout_marginTop="@dimen/login_et_marginTop"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/login_username_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_et_height"
+            android:background="@null"
+            android:hint="@string/login_username_hint"
+            android:textSize="@dimen/font_size_16"
+            android:textColor="@color/black"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_line_height"
+            android:background="@color/line_grey"/>
+
+        <EditText
+            android:id="@+id/login_password_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_et_height"
+            android:layout_marginTop="@dimen/login_et_marginTop_distance"
+            android:background="@null"
+            android:hint="@string/login_password_hint"
+            android:textSize="@dimen/font_size_16"
+            android:textColor="@color/black"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_line_height"
+            android:background="@color/line_grey"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_ok_btn"
+        android:layout_width="@dimen/login_ok_btn_width"
+        android:layout_height="@dimen/login_ok_btn_height"
+        android:layout_marginTop="@dimen/login_ok_btn_marginTop"
+        android:background="@mipmap/input_isbn__btn_bg"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_19"
+        android:text="@string/login_ok_btn"/>
+</LinearLayout>
