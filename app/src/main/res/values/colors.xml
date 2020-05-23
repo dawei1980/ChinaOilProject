@@ -69,6 +69,9 @@
     <color name="mine_bg">#f7f7f7</color>
     <color name="word_gray">#656565</color>
     <color name="popup_right_bg_selected">#ccc</color>
+    <color name="me_divider">#ffd7d7d7</color>
+    <color name="usercenter_font_black">#595959</color>
+    <color name="relative_head_green">#4dd0c8</color>
 
     <color name="divider_color">#e4e4e4</color>
     <color name="textcolor">#535353</color>

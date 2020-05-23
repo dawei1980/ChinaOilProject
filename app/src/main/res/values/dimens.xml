@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="me_left_list_avatar_size">80dp</dimen>
+    <dimen name="me_left_list_avatar_margin">19dp</dimen>
+    <dimen name="me_left_list_vip_icon_h">20dp</dimen>
+    <dimen name="me_left_list_welfare_margin_l_r">35dp</dimen>
+    <dimen name="me_left_list_welfare_h">55dp</dimen>
+    <dimen name="me_left_list_item_padding_l_r">17dp</dimen>
+    <dimen name="me_left_list_item_h">50dp</dimen>
+
+    <dimen name="usercenter_left_title_textsize">17sp</dimen>
+
     <!--通用dimens-->
     <dimen name="font_size_10">10dp</dimen>
     <dimen name="font_size_11">11dp</dimen>

@@ -8,4 +8,44 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MeDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dip</item>
+        <item name="android:background">@color/me_divider</item>
+    </style>
+
+    <style name="MeItemArrowView">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="android:background">@mipmap/set_arrow</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="MeLeftListItemLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/me_left_list_item_h</item>
+        <item name="android:paddingLeft">@dimen/me_left_list_item_padding_l_r</item>
+        <item name="android:paddingRight">@dimen/me_left_list_item_padding_l_r</item>
+        <item name="android:background">@drawable/selector_me_left_list_item</item>
+    </style>
+
+    <style name="MeLeftListItemTitleView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/usercenter_font_black</item>
+        <item name="android:textSize">@dimen/usercenter_left_title_textsize</item>
+        <item name="android:drawablePadding">@dimen/me_left_list_item_padding_l_r</item>
+    </style>
+
+    <style name="MeLeftListItemNewTagView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:src">@mipmap/new_red_ponit</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
 </resources>

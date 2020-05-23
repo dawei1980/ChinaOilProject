@@ -2,9 +2,132 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/user_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ttttttttttt"/>
+        android:background="@color/relative_head_green"
+        android:paddingBottom="@dimen/me_left_list_avatar_margin">
+
+        <ImageView
+            android:id="@+id/meAvatarView"
+            android:layout_width="@dimen/me_left_list_avatar_size"
+            android:layout_height="@dimen/me_left_list_avatar_size"
+            android:layout_marginLeft="@dimen/me_left_list_avatar_margin"
+            android:layout_marginRight="@dimen/me_left_list_avatar_margin"
+            android:layout_marginTop="@dimen/me_left_list_avatar_margin"
+            android:background="@color/transparent"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@mipmap/img_usercentre_header_f" />
+
+        <ImageView
+            style="@style/MeItemArrowView"
+            android:contentDescription="@null"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/meAvatarView"
+            tools:ignore="NotSibling,RtlHardcoded,UnknownId">
+
+            <TextView
+                android:id="@+id/user_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="@string/me_left_list_have_not_signed_in"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View style="@style/MeDivider" />
+
+    <View
+        style="@style/MeDivider"
+        android:layout_marginTop="10dp" />
+
+    <RelativeLayout
+        android:id="@+id/meItemSettingLayout"
+        style="@style/MeLeftListItemLayout" >
+
+        <TextView
+            android:id="@+id/meItemSettingTitleView"
+            style="@style/MeLeftListItemTitleView"
+            android:drawableLeft="@mipmap/img_me_item_setting"
+            android:text="@string/setting" />
+
+        <ImageView
+            android:id="@+id/meItemSettingNewTagView"
+            style="@style/MeLeftListItemNewTagView"
+            android:layout_toRightOf="@+id/meItemSettingTitleView"
+            android:contentDescription="@null"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/meItemSettingArrowView"
+            style="@style/MeItemArrowView"
+            android:contentDescription="@null" />
+
+        <View
+            style="@style/MeDivider"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/meItemFeedbackLayout"
+        style="@style/MeLeftListItemLayout" >
+
+        <TextView
+            android:id="@+id/meItemFeedbackTitleView"
+            style="@style/MeLeftListItemTitleView"
+            android:drawableLeft="@mipmap/img_me_item_feedback"
+            android:text="@string/str_usercenter_feedback_kf" />
+
+        <ImageView
+            android:id="@+id/meItemFeedbackNewTagView"
+            style="@style/MeLeftListItemNewTagView"
+            android:layout_toRightOf="@+id/meItemFeedbackTitleView"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/meItemFeedbackArrowView"
+            style="@style/MeItemArrowView"
+            android:contentDescription="@null" />
+
+        <View
+            style="@style/MeDivider"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/meItemAboutLayout"
+        style="@style/MeLeftListItemLayout" >
+
+        <TextView
+            android:id="@+id/meItemAboutTitleView"
+            style="@style/MeLeftListItemTitleView"
+            android:drawableLeft="@mipmap/img_me_item_about_us"
+            android:text="@string/str_usercenter_about_us" />
+
+        <ImageView
+            android:id="@+id/meItemAboutNewTagView"
+            style="@style/MeLeftListItemNewTagView"
+            android:layout_toRightOf="@+id/meItemAboutTitleView"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/meItemAboutArrowView"
+            style="@style/MeItemArrowView"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+
+    <View style="@style/MeDivider" />
 </LinearLayout>
