@@ -6,6 +6,10 @@
     <string name="home_text">首页</string>
     <string name="approval_text">审批</string>
 
+    <string name="my_approval">我的审批</string>
+    <string name="under_approval">审批中</string>
+    <string name="approval_result">审批结果</string>
+
     <string name="setting">设置</string>
     <string name="str_usercenter_feedback_kf">客服</string>
     <string name="str_usercenter_about_us">关于我们</string>
