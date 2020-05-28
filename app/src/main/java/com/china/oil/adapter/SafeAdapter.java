@@ -1,10 +1,14 @@
 package com.china.oil.adapter;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.china.oil.R;
 import com.china.oil.entity.SafeVideo;
 
 import java.util.ArrayList;
@@ -37,10 +41,25 @@ public class SafeAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        ViewHolder mHolder = null;
+
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_safe, null);
+
+            mHolder = new ViewHolder();
+
+            mHolder.safe_tv = convertView.findViewById(R.id.safe_tv);
+
+            convertView.setTag(mHolder);
+        } else {
+            mHolder = (ViewHolder) convertView.getTag();
+        }
+
+
+        return convertView;
     }
 
     public static class ViewHolder{
-
+        TextView safe_tv;
     }
 }
