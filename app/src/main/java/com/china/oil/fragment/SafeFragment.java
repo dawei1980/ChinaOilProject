@@ -5,15 +5,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
 import com.china.oil.R;
+import com.china.oil.adapter.SafeAdapter;
+import com.china.oil.entity.SafeVideo;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SafeFragment extends Fragment {
     private View view;
+
+    @BindView(R.id.safe_lv)
+    ListView safe_lv;
+    List<SafeVideo> mList;
+
+    private SafeAdapter safeAdapter;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.frag_safe, null);
@@ -26,7 +39,12 @@ public class SafeFragment extends Fragment {
     }
 
     private void initView(){
+        mList = new ArrayList<>();
+        mList.add(new SafeVideo("滴滴剑指货运市场，货拉拉们准备好了吗？","http://seopic.699pic.com/photo/50051/4132.jpg_wh1200.jpg"));
+        mList.add(new SafeVideo("网易官宣京东沉默，中概股回归加速","http://seopic.699pic.com/photo/50064/6750.jpg_wh1200.jpg"));
 
+        safeAdapter = new SafeAdapter(getActivity(),mList);
+        safe_lv.setAdapter(safeAdapter );
     }
 }
 
