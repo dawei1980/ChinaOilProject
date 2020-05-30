@@ -56,7 +56,14 @@
 
         <activity
             android:name="com.china.oil.activity.LoginActivity"
-            style="@style/activity_screen_orientation"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            tools:ignore="ManifestResource">
+        </activity>
+
+        <activity
+            android:name="com.china.oil.activity.VideoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden"
