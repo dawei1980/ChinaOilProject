@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.china.oil.R;
 
@@ -19,6 +20,8 @@ public class LoginActivity extends BaseActivity {
     EditText login_username_et;
     @BindView(R.id.login_password_et)
     EditText login_password_et;
+    @BindView(R.id.title_text)
+    TextView title_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class LoginActivity extends BaseActivity {
 
     @SuppressLint("MissingPermission")
     private void initView() {
-
+        title_text.setText("登录");
 
     }
 
@@ -43,7 +46,7 @@ public class LoginActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.login_ok_btn:
-
+                finish();
                 break;
         }
     }

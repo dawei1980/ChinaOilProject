@@ -54,6 +54,6 @@
         <item name="android:layout_height">@dimen/back_btn_height</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:background">@mipmap/img_back</item>
-        <item name="android:layout_marginLeft">@dimen/dp_5</item>
+        <item name="android:layout_marginLeft">@dimen/dp_10</item>
     </style>
 </resources>

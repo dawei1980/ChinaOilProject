@@ -7,6 +7,7 @@ import android.media.session.PlaybackState;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +32,7 @@ import com.google.android.exoplayer2.util.Util;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class VideoActivity extends AppCompatActivity {
     @BindView(R.id.simpleExoPlayerView)
@@ -39,6 +41,8 @@ public class VideoActivity extends AppCompatActivity {
     TextView safe_detail_title;
     @BindView(R.id.safe_detail_content)
     TextView safe_detail_content;
+    @BindView(R.id.title_text)
+    TextView title_text;
 
     static Handler mainHandler = new Handler();
     // step1. 创建一个默认的TrackSelector
@@ -66,6 +70,7 @@ public class VideoActivity extends AppCompatActivity {
     }
 
     private void initExoplayer() {
+        title_text.setText("安全详情");
         simpleExoPlayerView = (SimpleExoPlayerView) findViewById(R.id.simpleExoPlayerView);
 
         Intent intent = getIntent();
@@ -127,6 +132,15 @@ public class VideoActivity extends AppCompatActivity {
             player.stop();
             player.release();
             player = null;
+        }
+    }
+
+    @OnClick({R.id.back_btn})
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.back_btn:
+                finish();
+                break;
         }
     }
 
