@@ -44,8 +44,8 @@ public class SafeFragment extends Fragment {
 
     private void initView(){
         mList = new ArrayList<>();
-        mList.add(new SafeVideo("滴滴剑指货运市场，货拉拉们准备好了吗？","http://seopic.699pic.com/photo/50051/4132.jpg_wh1200.jpg",""));
-        mList.add(new SafeVideo("网易官宣京东沉默，中概股回归加速","http://seopic.699pic.com/photo/50064/6750.jpg_wh1200.jpg",""));
+        mList.add(new SafeVideo("三大电商Q1财报的 “黑与白”：物流配送扛大旗，亏损缺钱是硬伤","据Q1财报显示，阿里巴巴疫情中净利润同比下滑88%，京东净利润同比下滑99%，拼多多亏损幅度扩大了不只一倍。作为国内电商行业三大巨头，在利润方面，和纯实体零售业并无二致。不同的是，他们依然保持着极强的优势和韧性，1-3月份，社会零售总额同比下降19%，但阿里和京东的营收还保持在同比20%以上的增幅，拼多多更是同比增长超过40%。","http://seopic.699pic.com/photo/50051/4132.jpg_wh1200.jpg",""));
+        mList.add(new SafeVideo("网易官宣京东沉默，中概股回归加速","截至3月底，拼多多的年度活跃买家达到6.28亿，阿里中国零售市场的年度活跃消费者冲至7.26亿。不足1亿的差距，让外界认为阿里遇到了拼多多的强大挑战。当然，用户的争夺确实给阿里造成了压力，但是从一季度这个特殊时期的财报来看，阿里的整体优势依然明显。","http://seopic.699pic.com/photo/50064/6750.jpg_wh1200.jpg",""));
 
         safeAdapter = new SafeAdapter(getActivity(),mList);
         safe_lv.setAdapter(safeAdapter );
@@ -56,6 +56,7 @@ public class SafeFragment extends Fragment {
                 intent = new Intent(getActivity(), VideoActivity.class);
                 intent.putExtra("title", mList.get(position).getTitle());
                 intent.putExtra("video_url", mList.get(position).getVideoUrl());
+                intent.putExtra("content", mList.get(position).getContent());
                 startActivity(intent);
             }
         });

@@ -7,6 +7,8 @@ import android.media.session.PlaybackState;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.china.oil.R;
 import com.google.android.exoplayer2.ExoPlayerFactory;
@@ -33,6 +35,10 @@ import butterknife.ButterKnife;
 public class VideoActivity extends AppCompatActivity {
     @BindView(R.id.simpleExoPlayerView)
     SimpleExoPlayerView simpleExoPlayerView;
+    @BindView(R.id.safe_detail_title)
+    TextView safe_detail_title;
+    @BindView(R.id.safe_detail_content)
+    TextView safe_detail_content;
 
     static Handler mainHandler = new Handler();
     // step1. 创建一个默认的TrackSelector
@@ -65,6 +71,10 @@ public class VideoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String url = intent.getStringExtra("video_url");
         String title =intent.getStringExtra("title");
+        String content =intent.getStringExtra("content");
+
+        safe_detail_title.setText(title);
+        safe_detail_content.setText(content);
 
         //step2. 创建播放器
         player = ExoPlayerFactory.newSimpleInstance(this, trackSelector);

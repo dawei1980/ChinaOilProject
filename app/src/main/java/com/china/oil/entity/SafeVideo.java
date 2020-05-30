@@ -6,9 +6,11 @@ public class SafeVideo implements Serializable {
     private String title;
     private String imgUrl;
     private String videoUrl;
+    private String content;
 
-    public SafeVideo(String title, String imgUrl,String videoUrl){
+    public SafeVideo(String title,String content ,String imgUrl,String videoUrl){
         this.title = title;
+        this.content = content;
         this.imgUrl = imgUrl;
         this.videoUrl = videoUrl;
     }
@@ -35,5 +37,13 @@ public class SafeVideo implements Serializable {
 
     public void setVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }
