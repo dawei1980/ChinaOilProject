@@ -41,8 +41,12 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.68'
-    implementation 'com.google.android.exoplayer:exoplayer:2.8.4'
+
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.11.1'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.11.1'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.11.1'
+
 
 }

@@ -44,7 +44,6 @@ public class VideoActivity extends AppCompatActivity {
     @BindView(R.id.title_text)
     TextView title_text;
 
-    static Handler mainHandler = new Handler();
     // step1. 创建一个默认的TrackSelector
     // 创建带宽
     BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
@@ -84,23 +83,26 @@ public class VideoActivity extends AppCompatActivity {
         //step2. 创建播放器
         player = ExoPlayerFactory.newSimpleInstance(this, trackSelector);
         // 创建加载数据的工厂
-        DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(this,
-                Util.getUserAgent(this, "yourApplicationName"), (TransferListener<? super DataSource>) bandwidthMeter);
+        DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(this, Util.getUserAgent(this, "yourApplicationName"), (TransferListener) bandwidthMeter);
 
         // 创建解析数据的工厂
         ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
         // 传入Uri、加载数据的工厂、解析数据的工厂，就能创建出MediaSource
-//        String url = "http://7xstkb.com1.z0.glb.clouddn.com/agen_apple.mp4";
         Uri mp4VideoUri = Uri.parse(url);
         MediaSource videoSource = new ExtractorMediaSource(mp4VideoUri,
                 dataSourceFactory, extractorsFactory, null, null);
         // Prepare
         player.prepare(videoSource);
+
+        simpleExoPlayerView.setPlayer(player);
     }
 
     private void startPlayer() {
-        simpleExoPlayerView.setPlayer(player);
         player.setPlayWhenReady(true);
+    }
+
+    private void pausePlayer(){
+        player.setPlayWhenReady(false);
     }
 
     @Override
@@ -108,7 +110,6 @@ public class VideoActivity extends AppCompatActivity {
         super.onResume();
 
         if (player != null&& player.getCurrentPosition()>0) {
-
             player.setPlayWhenReady(true);
             player.seekTo(resumePosition);
         }
