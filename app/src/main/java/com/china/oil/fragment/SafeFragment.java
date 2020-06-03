@@ -63,6 +63,8 @@ public class SafeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+
     }
 }
 
