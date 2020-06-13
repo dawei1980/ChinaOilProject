@@ -12,40 +12,37 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/mLineChar"
+            <com.zhy.android.percent.support.PercentLinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_50" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/mLineChar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_30"
+                    app:layout_widthPercent="90%w"/>
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
 
             <com.zhy.android.percent.support.PercentLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="@dimen/dp_20">
+                android:layout_marginTop="@dimen/dp_10">
 
-                <LinearLayout
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/mTargetPieChart_1"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="@dimen/dp_100"
+                    app:layout_widthPercent="30%w"/>
+
+                <com.github.mikephil.charting.charts.HorizontalBarChart
+                    android:id="@+id/mHorizontalBarChart"
+                    android:layout_marginTop="@dimen/dp_20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_widthPercent="30%w">
-                    <com.github.mikephil.charting.charts.PieChart
-                        android:id="@+id/mTargetPieChart_1"
-                        android:layout_width="@dimen/dp_100"
-                        android:layout_height="@dimen/dp_100" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_widthPercent="70%w">
-                    <com.github.mikephil.charting.charts.HorizontalBarChart
-                        android:id="@+id/mHorizontalBarChart"
-                        android:layout_marginTop="@dimen/dp_20"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
+                    app:layout_widthPercent="70%w"/>
             </com.zhy.android.percent.support.PercentLinearLayout>
         </LinearLayout>
     </ScrollView>

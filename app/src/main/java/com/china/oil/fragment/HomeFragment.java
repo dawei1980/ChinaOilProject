@@ -158,7 +158,6 @@ public class HomeFragment extends Fragment {
         mTarPieChart1.highlightValues(null);
         mTarPieChart1.animateY(1500, Easing.EaseInOutQuad);
         mTarPieChart1.invalidate();
-        //环状图====================================================================================
     }
 
     /**
