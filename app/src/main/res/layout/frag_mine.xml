@@ -8,7 +8,7 @@
         android:id="@+id/user_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/relative_head_green"
+        android:background="@color/holo_blue_light"
         android:paddingBottom="@dimen/me_left_list_avatar_margin">
 
         <ImageView
@@ -18,7 +18,7 @@
             android:layout_marginLeft="@dimen/me_left_list_avatar_margin"
             android:layout_marginRight="@dimen/me_left_list_avatar_margin"
             android:layout_marginTop="@dimen/me_left_list_avatar_margin"
-            android:background="@color/transparent"
+            android:background="@color/holo_blue_light"
             android:contentDescription="@null"
             android:scaleType="fitXY"
             android:src="@mipmap/img_usercentre_header_f" />
