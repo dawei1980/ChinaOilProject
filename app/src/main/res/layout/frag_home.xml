@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <ScrollView
@@ -16,7 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_50" />
 
-            <LinearLayout
+            <com.zhy.android.percent.support.PercentLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -26,8 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_weight="1">
+                    app:layout_widthPercent="30%w">
                     <com.github.mikephil.charting.charts.PieChart
                         android:id="@+id/mTargetPieChart_1"
                         android:layout_width="@dimen/dp_100"
@@ -38,33 +38,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_weight="1">
-                    <com.github.mikephil.charting.charts.PieChart
-                        android:id="@+id/mTargetPieChart_2"
-                        android:layout_width="@dimen/dp_100"
-                        android:layout_height="@dimen/dp_100" />
+                    app:layout_widthPercent="70%w">
+                    <com.github.mikephil.charting.charts.HorizontalBarChart
+                        android:id="@+id/mHorizontalBarChart"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_weight="1">
-                    <com.github.mikephil.charting.charts.PieChart
-                        android:id="@+id/mTargetPieChart_3"
-                        android:layout_width="@dimen/dp_100"
-                        android:layout_height="@dimen/dp_100" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <com.github.mikephil.charting.charts.HorizontalBarChart
-                android:id="@+id/mHorizontalBarChart"
-                android:layout_marginTop="@dimen/dp_20"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
+            </com.zhy.android.percent.support.PercentLinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -50,10 +50,6 @@ public class HomeFragment extends Fragment {
 
     @BindView(R.id.mTargetPieChart_1)
     PieChart mTarPieChart1;
-    @BindView(R.id.mTargetPieChart_2)
-    PieChart mTarPieChart2;
-    @BindView(R.id.mTargetPieChart_3)
-    PieChart mTarPieChart3;
 
     @BindView(R.id.mHorizontalBarChart)
     HorizontalBarChart mHorizontalBarChart;
@@ -163,44 +159,6 @@ public class HomeFragment extends Fragment {
         mTarPieChart1.animateY(1500, Easing.EaseInOutQuad);
         mTarPieChart1.invalidate();
         //环状图====================================================================================
-
-        mTarPieChart2.setTouchEnabled(false);
-        mTarPieChart2.setDrawHoleEnabled(true); //显示中间的洞
-        mTarPieChart2.setHoleColor(0xffffffff); //洞的颜色
-        mTarPieChart2.setTransparentCircleColor(R.color.sred);
-        mTarPieChart2.setDrawSliceText(false);//不显示切片里面的字体，就是pie 块里面的字体
-        mTarPieChart2.setDescription(null); //不显示描述
-        mTarPieChart2.setHoleRadius(70f); //洞的大小
-        mTarPieChart2.setTransparentCircleRadius(20f); //效果的大小
-        mTarPieChart2.setDrawCenterText(false);//中心的文字也不要写了
-        mTarPieChart2.setRotationAngle(108); //显示的角度 90+ X% * 360
-        Legend legend2 = mTarPieChart2.getLegend();
-        legend2.setEnabled(false);//对pie 块的描述也不要显示
-
-        mTarPieChart2.setData(getPieData(70, 30, getResources().getColor(R.color.sred)));
-        mTarPieChart2.highlightValues(null);
-        mTarPieChart2.animateY(1500, Easing.EaseInOutQuad);
-        mTarPieChart2.invalidate();
-
-        //环状图====================================================================================
-        mTarPieChart3.setTouchEnabled(false);
-        mTarPieChart3.setDrawHoleEnabled(true); //显示中间的洞
-        mTarPieChart3.setHoleColor(0xffffffff); //洞的颜色
-        mTarPieChart3.setTransparentCircleColor(R.color.layout_bg_blue);
-        mTarPieChart3.setDrawSliceText(false);//不显示切片里面的字体，就是pie 块里面的字体
-        mTarPieChart3.setDescription(null); //不显示描述
-        mTarPieChart3.setHoleRadius(70f); //洞的大小
-        mTarPieChart3.setTransparentCircleRadius(20f); //效果的大小
-        mTarPieChart3.setDrawCenterText(false);//中心的文字也不要写了
-        mTarPieChart3.setRotationAngle(108); //显示的角度 90+ X% * 360
-        Legend legend3 = mTarPieChart3.getLegend();
-        legend3.setEnabled(false);//对pie 块的描述也不要显示
-
-        mTarPieChart3.setData(getPieData(70, 30, getResources().getColor(R.color.layout_bg_blue)));
-        mTarPieChart3.highlightValues(null);
-        mTarPieChart3.animateY(1500, Easing.EaseInOutQuad);
-        mTarPieChart3.invalidate();
-
     }
 
     /**
