@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/title_layout_height"
-    android:background="@color/relative_head_green">
+    android:background="@color/holo_blue_light">
     <Button
         android:id="@+id/back_btn"
         style="@style/Back_Style_left_top"/>
