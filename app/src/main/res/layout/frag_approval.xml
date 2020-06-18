@@ -23,8 +23,8 @@
             android:layout_weight="1"
             android:gravity="center">
             <ImageView
-                android:layout_width="@dimen/dp_80"
-                android:layout_height="@dimen/dp_80"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
                 android:background="@mipmap/approval_icon"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -43,8 +43,8 @@
             android:layout_weight="1"
             android:gravity="center">
             <ImageView
-                android:layout_width="@dimen/dp_80"
-                android:layout_height="@dimen/dp_80"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
                 android:background="@mipmap/sign"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -63,8 +63,8 @@
             android:layout_weight="1"
             android:gravity="center">
             <ImageView
-                android:layout_width="@dimen/dp_80"
-                android:layout_height="@dimen/dp_80"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
                 android:background="@mipmap/write_record"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -90,8 +90,8 @@
             android:layout_weight="1"
             android:gravity="center">
             <ImageView
-                android:layout_width="@dimen/dp_80"
-                android:layout_height="@dimen/dp_80"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
                 android:background="@mipmap/write_record"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -110,8 +110,8 @@
             android:layout_weight="1"
             android:gravity="center">
             <ImageView
-                android:layout_width="@dimen/dp_80"
-                android:layout_height="@dimen/dp_80"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
                 android:background="@mipmap/book"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -130,8 +130,8 @@
             android:layout_weight="1"
             android:gravity="center">
             <ImageView
-                android:layout_width="@dimen/dp_80"
-                android:layout_height="@dimen/dp_80"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
                 android:background="@mipmap/edit"/>
             <TextView
                 android:layout_width="wrap_content"
