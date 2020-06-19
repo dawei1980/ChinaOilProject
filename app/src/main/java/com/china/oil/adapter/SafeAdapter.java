@@ -53,6 +53,7 @@ public class SafeAdapter extends BaseAdapter {
 
             mHolder.safe_tv = convertView.findViewById(R.id.safe_tv);
             mHolder.safe_iv = convertView.findViewById(R.id.safe_iv);
+            mHolder.safe_title_tv = convertView.findViewById(R.id.safe_title_tv);
 
             convertView.setTag(mHolder);
         } else {
@@ -76,11 +77,16 @@ public class SafeAdapter extends BaseAdapter {
                 .apply(options)
                 .into(mHolder.safe_iv);
 
+//        SafeVideo safeVideo = new SafeVideo();
+//        mHolder.safe_tv.setText(safeVideo.getContent());
+//        mHolder.safe_title_tv.setText(safeVideo.getTitle());
+
         return convertView;
     }
 
     public static class ViewHolder{
         TextView safe_tv;
+        TextView safe_title_tv;
         ImageView safe_iv;
     }
 }
