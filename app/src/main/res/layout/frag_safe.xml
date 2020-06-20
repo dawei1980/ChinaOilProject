@@ -20,10 +20,9 @@
                 android:id="@+id/safe_lv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:divider="@null"
-                android:dividerHeight="@dimen/dp_5"
-                android:layout_marginTop="@dimen/dp_10"
-                android:layout_marginBottom="@dimen/dp_10"/>
+                android:divider="@color/color_9b9b9b"
+                android:dividerHeight="@dimen/dp_1"
+                android:layout_margin="@dimen/dp_10"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

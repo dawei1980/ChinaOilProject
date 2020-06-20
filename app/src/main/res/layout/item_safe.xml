@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -8,32 +9,36 @@
         android:id="@+id/safe_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/dp_20"
+        android:textSize="@dimen/dp_15"
         android:textColor="@color/blue_text"
         android:layout_marginLeft="@dimen/dp_15"
         android:layout_marginRight="@dimen/dp_10"
-        android:text="ddddd"/>
+        android:text="ddddd"
+        android:layout_marginTop="@dimen/dp_5"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="@dimen/dp_10">
+        android:layout_marginTop="@dimen/dp_5">
         <ImageView
             android:id="@+id/safe_iv"
             android:layout_width="@dimen/dp_150"
             android:layout_height="100dp"
             android:src="@mipmap/mine"
-            android:layout_marginLeft="@dimen/dp_10"/>
+            android:layout_marginLeft="@dimen/dp_10"
+            tools:ignore="RtlHardcoded" />
 
         <TextView
             android:id="@+id/safe_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/dp_20"
+            android:textSize="@dimen/dp_15"
             android:textColor="@color/blue_text"
+            android:layout_marginTop="@dimen/dp_5"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginRight="@dimen/dp_10"
-            android:text="ddddd"/>
+            android:text="ddddd"
+            tools:ignore="HardcodedText,RtlHardcoded,SpUsage" />
     </LinearLayout>
 </LinearLayout>
