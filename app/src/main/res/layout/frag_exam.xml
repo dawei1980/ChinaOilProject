@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <ImageView
+    <ListView
+        android:id="@+id/exam_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/exam_background"/>
+        android:divider="@color/white_press"
+        android:dividerHeight="@dimen/dp_1"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_margin="@dimen/dp_10">
+        <EditText
+            android:id="@+id/exam_input_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/rect_circle"
+            android:hint="@string/input_exam_text"
+            android:paddingLeft="@dimen/dp_15"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/send_comment_btn"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/rect_circle_blue"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/send_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_15"
+            tools:ignore="SpUsage" />
+    </LinearLayout>
 </LinearLayout>

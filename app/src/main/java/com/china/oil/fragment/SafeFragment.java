@@ -46,7 +46,6 @@ public class SafeFragment extends Fragment {
     private Intent intent;
 
     private ArrayList<String> imagePath = new ArrayList<>();
-    private ArrayList<String> imageTitle = new ArrayList<>();
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.frag_safe, null);

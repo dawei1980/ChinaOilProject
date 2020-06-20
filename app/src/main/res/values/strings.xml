@@ -35,4 +35,6 @@
     <string name="login_error_201">帐户不存在</string>
     <string name="login_error_202">密码错误</string>
     <string name="login_error_203">超过绑定限制</string>
+    <string name="input_exam_text">觉得不错就说两句</string>
+    <string name="send_text">发送</string>
 </resources>
