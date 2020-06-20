@@ -20,7 +20,7 @@
                 android:id="@+id/safe_lv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:divider="@color/color_9b9b9b"
+                android:divider="@color/gray_pressed"
                 android:dividerHeight="@dimen/dp_1"
                 android:layout_margin="@dimen/dp_10"/>
         </LinearLayout>

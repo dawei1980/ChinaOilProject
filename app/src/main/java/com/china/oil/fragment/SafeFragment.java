@@ -1,5 +1,6 @@
 package com.china.oil.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,18 +13,21 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+
+import com.bumptech.glide.Glide;
 import com.china.oil.R;
 import com.china.oil.activity.VideoActivity;
 import com.china.oil.adapter.SafeAdapter;
 import com.china.oil.entity.SafeVideo;
-import com.china.oil.uils.LocalImageLoader;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
 import com.youth.banner.listener.OnBannerListener;
+import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,7 +45,6 @@ public class SafeFragment extends Fragment {
     private SafeAdapter safeAdapter;
     private Intent intent;
 
-    private LocalImageLoader mImageLoader;
     private ArrayList<String> imagePath = new ArrayList<>();
     private ArrayList<String> imageTitle = new ArrayList<>();
 
@@ -52,7 +55,6 @@ public class SafeFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         initView();
-        initData();
         return view;
     }
 
@@ -61,9 +63,8 @@ public class SafeFragment extends Fragment {
         String VIDEO_URL = "https://storage.googleapis.com/exoplayer-test-media-1/mkv/android-screens-lavf-56.36.100-aac-avc-main-1280x720.mkv";
 
         mList = new ArrayList<>();
-        mList.add(new SafeVideo("三大电商Q1财报的","据Q1财报显示，阿里巴巴疫情中净利润同比下滑88%",VIDEO_URL,"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505746504&di=930c4d677a02328a142d6fa85ed14580&imgtype=jpg&er=1&src=http%3A%2F%2Fattimg.dospy.com%2Fimg%2Fday_090113%2F20090113_6ac58b42bea94f0b318e1B6BZb5lPZl5.jpg"));
-        mList.add(new SafeVideo("网易官宣京东沉默","截至3月底，拼多多的年度活跃买家达到6.28亿",VIDEO_URL,"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505151956771&di=0eb6f306991d24b67a13ceb336f80102&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farchive%2F00613def3f1beb7a35ae136341be2b589bc46a2d.jpg_320x200.jpg"));
-
+        mList.add(new SafeVideo("三大电商Q1财报的","据Q1财报显示，阿里巴巴疫情中净利润同比下滑88%","http://seopic.699pic.com/photo/50017/5948.jpg_wh1200.jpg",VIDEO_URL));
+        mList.add(new SafeVideo("网易官宣京东沉默","截至3月底，拼多多的年度活跃买家达到6.28亿","http://seopic.699pic.com/photo/50033/2331.jpg_wh1200.jpg",VIDEO_URL));
         safeAdapter = new SafeAdapter(getActivity(),mList);
         safe_lv.setAdapter(safeAdapter );
 
@@ -78,48 +79,37 @@ public class SafeFragment extends Fragment {
             }
         });
 
-        mImageLoader = new LocalImageLoader();
+        imagePath.add("http://seopic.699pic.com/photo/50032/5463.jpg_wh1200.jpg");
+        imagePath.add("http://seopic.699pic.com/photo/50031/2015.jpg_wh1200.jpg");
+        imagePath.add("http://seopic.699pic.com/photo/50052/7815.jpg_wh1200.jpg");
+        imagePath.add("http://seopic.699pic.com/photo/40150/3529.jpg_wh1200.jpg");
+        imagePath.add("http://seopic.699pic.com/photo/50064/6750.jpg_wh1200.jpg");
 
-        //样式
-        mBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE);
-        //加载器
-        mBanner.setImageLoader(mImageLoader);
-        //动画效果
-        mBanner.setBannerAnimation(Transformer.ZoomOutSlide);
-        //图片标题
-        mBanner.setBannerTitles(imageTitle);
-        //间隔时间
-        mBanner.setDelayTime(4500);
-        //是否为自动轮播
-        mBanner.isAutoPlay(true);
-        //图片小点显示所在位置
-        mBanner.setIndicatorGravity(BannerConfig.CENTER);
-        //图片加载地址
-        mBanner.setImages(imagePath);
-        //启动轮播图。
-        mBanner.start();
-        //监听轮播图
-        mBanner.setOnBannerListener(new OnBannerListener() {
-            @Override
-            public void OnBannerClick(int position) {
-                Toast.makeText(getActivity(), "点击了" + (position + 1) + "张轮播图", Toast.LENGTH_SHORT).show();
-            }
-        });
+        for (int i = 0; i <imagePath.size() ; i++) {
+            mBanner.setImageLoader(new ImageLoader() {
+                @Override
+                public void displayImage(Context context, Object path, ImageView imageView) {
+                    Glide.with(Objects.requireNonNull(getActivity())).load(path).into(imageView);
+                }
+            });
+            mBanner.setDelayTime(3000);
+            mBanner.setImages(imagePath);
+            mBanner.start();
+        }
+
     }
 
-    private void initData() {
-        imagePath.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505151721118&di=649c9a43aed72fbc4d99ec1a031510c6&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F015c7d574b9f8f6ac72525aee98351.jpg");
-        imagePath.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505151956771&di=0eb6f306991d24b67a13ceb336f80102&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farchive%2F00613def3f1beb7a35ae136341be2b589bc46a2d.jpg_320x200.jpg");
-        imagePath.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505151847685&di=c7a4b5d08ec43fa629bcb690039a7629&imgtype=0&src=http%3A%2F%2Fattimg.dospy.com%2Fimg%2Fday_080625%2F20080625_2e91a10c444877e88827vri2ZKdGMvQo.jpg");
-        imagePath.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505151825129&di=70bf74b87d8a15cb91a2d79f15ed0eaf&imgtype=0&src=http%3A%2F%2Fattimg.dospy.com%2Fimg%2Fday_081016%2F20081016_fee215664d5740e56c13E2YB8giERFEX.jpg");
-        imagePath.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505746504&di=930c4d677a02328a142d6fa85ed14580&imgtype=jpg&er=1&src=http%3A%2F%2Fattimg.dospy.com%2Fimg%2Fday_090113%2F20090113_6ac58b42bea94f0b318e1B6BZb5lPZl5.jpg");
 
-        imageTitle.add("哆啦A梦1");
-        imageTitle.add("哆啦A梦2");
-        imageTitle.add("哆啦A梦3");
-        imageTitle.add("哆啦A梦4");
-        imageTitle.add("哆啦A梦5");
-        imageTitle.add("哆啦A梦6");
+    @Override
+    public void onStart() {
+        super.onStart();
+        mBanner.startAutoPlay();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mBanner.stopAutoPlay();
     }
 
 }
