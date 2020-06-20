@@ -67,19 +67,13 @@ public class SafeAdapter extends BaseAdapter {
                 .error(R.mipmap.adv)
                 .diskCacheStrategy(DiskCacheStrategy.NONE);;
 
-//        Glide.with(context)
-//                .load(url)
-//                .apply(options)
-//                .into(mHolder.safe_iv);
-
         Glide.with(context)
-                .load("http://guolin.tech/book.png")
+                .load(url)
                 .apply(options)
                 .into(mHolder.safe_iv);
 
-//        SafeVideo safeVideo = new SafeVideo();
-//        mHolder.safe_tv.setText(safeVideo.getContent());
-//        mHolder.safe_title_tv.setText(safeVideo.getTitle());
+        mHolder.safe_tv.setText(mList.get(position).getContent());
+        mHolder.safe_title_tv.setText(mList.get(position).getTitle());
 
         return convertView;
     }
