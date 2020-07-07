@@ -106,6 +106,21 @@ public class HomeFragment extends Fragment {
     }
 
     private void initBarChart() {
+
+        Description description = new Description();
+        description.setText("违章车辆的违章次数占比分布图统计");
+        description.setTextSize(20f);
+        description.setTextColor(Color.BLACK);
+
+        //获取屏幕的中间坐标
+        WindowManager wm = (WindowManager) getActivity() .getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics dm = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(dm);
+        float x = dm.widthPixels / 2;
+
+        description.setPosition(x,40);
+        barChart.setDescription(description);
+
         barChart.getDescription().setEnabled(false); // 不显示描述
         barChart.getLegend().setEnabled(false); // 不显示图例
         barChart.setExtraOffsets(30, 30, 30, 30);  // 设置饼图的偏移量，类似于内边距 ，设置视图窗口大小
