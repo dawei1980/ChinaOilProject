@@ -38,6 +38,7 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -105,19 +106,6 @@ public class HomeFragment extends Fragment {
     }
 
     private void initBarChart() {
-        Description description = new Description();
-        description.setText("违章车辆的违章次数占比分布图统计");
-        description.setTextSize(20f);
-        description.setTextColor(Color.BLACK);
-        //获取屏幕的中间坐标
-        WindowManager wm = (WindowManager) getActivity() .getSystemService(Context.WINDOW_SERVICE);
-        DisplayMetrics dm = new DisplayMetrics();
-        wm.getDefaultDisplay().getMetrics(dm);
-        float x = dm.widthPixels / 2;
-
-        description.setPosition(x,40);
-        barChart.setDescription(description);
-
         barChart.getDescription().setEnabled(false); // 不显示描述
         barChart.getLegend().setEnabled(false); // 不显示图例
         barChart.setExtraOffsets(30, 30, 30, 30);  // 设置饼图的偏移量，类似于内边距 ，设置视图窗口大小
@@ -156,7 +144,7 @@ public class HomeFragment extends Fragment {
         xAxis.setTextSize(15f);
         xAxis.setLabelCount(3);
         xAxis.setGranularity(1f); // 防止放大图后，标签错乱
-        final String label[] = {"5条以上违章", "3-5条违章", "1-2条违章"};
+        final String label[] = {"昨日卖出石油总量", "今日卖出石油总量", "未来卖出石油总量"};
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getFormattedValue(float v, AxisBase axisBase) {
